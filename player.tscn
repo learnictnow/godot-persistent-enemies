@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cowclidwmrbyu"]
+[gd_scene load_steps=6 format=3 uid="uid://cowclidwmrbyu"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_vmsvs"]
+[ext_resource type="Script" path="res://Subtitles.gd" id="2_k7o4j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yp04u"]
 albedo_color = Color(1, 0.372549, 1, 1)
@@ -23,3 +24,10 @@ shape = SubResource("CapsuleShape3D_ejdin")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 19, 15)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Subby"
+script = ExtResource("2_k7o4j")
