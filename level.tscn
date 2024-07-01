@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://7cp05d6g7lje"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(25, 1, 25)
