@@ -1,10 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://7cp05d6g7lje"]
+[gd_scene load_steps=10 format=3 uid="uid://7cp05d6g7lje"]
 
 [ext_resource type="PackedScene" uid="uid://cowclidwmrbyu" path="res://player.tscn" id="1_77t6u"]
+[ext_resource type="Script" path="res://level.gd" id="1_xwnr8"]
 [ext_resource type="PackedScene" uid="uid://b6gvoh3fltusj" path="res://enemy_square.tscn" id="2_qmt2j"]
 [ext_resource type="PackedScene" uid="uid://cm0fkjg054koa" path="res://enemy_sphere.tscn" id="3_jmeq1"]
+[ext_resource type="Script" path="res://ChangeZone.gd" id="4_di1tp"]
+[ext_resource type="PackedScene" uid="uid://d15m1cmgrjivm" path="res://pickup.tscn" id="7_rpi3p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_208x6"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syrbk"]
+albedo_color = Color(0.392157, 1, 0.356863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vjjmb"]
+size = Vector3(3, 3, 3)
 
 [node name="Level" type="Node3D"]
+script = ExtResource("1_xwnr8")
+location_name = "Starting Sands"
 
 [node name="Floor" type="CSGBox3D" parent="."]
 use_collision = true
@@ -18,3 +32,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -6)
 
 [node name="EnemySphere" parent="." instance=ExtResource("3_jmeq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01506, 0.5, -3.23384)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.69945, 0)
+
+[node name="ChangeZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.26802)
+script = ExtResource("4_di1tp")
+change_target = "res://level2.tscn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChangeZone"]
+shape = SubResource("BoxShape3D_208x6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChangeZone"]
+material_overlay = SubResource("StandardMaterial3D_syrbk")
+transparency = 0.5
+mesh = SubResource("BoxMesh_vjjmb")
+
+[node name="Pickup" parent="." instance=ExtResource("7_rpi3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73111, 0.5, 2.65054)
+
+[node name="Pickup2" parent="." instance=ExtResource("7_rpi3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.60545, 0.5, 5.45938)
+
+[node name="Pickup3" parent="." instance=ExtResource("7_rpi3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70463, 0.500002, 0.521418)
+
+[connection signal="body_entered" from="ChangeZone" to="ChangeZone" method="_on_body_entered"]

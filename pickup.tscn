@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://d15m1cmgrjivm"]
+
+[ext_resource type="Script" path="res://pickup.gd" id="1_cwkjw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdton"]
+albedo_color = Color(0.968627, 0.262745, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_4cah7"]
+inner_radius = 0.4
+outer_radius = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yl7cq"]
+
+[node name="Pickup" type="Area3D"]
+script = ExtResource("1_cwkjw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, 0, 0, 1, 1, 4.37114e-08, 0, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.707107, 0.707107, 0, -0.707107, -0.707107, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.09086e-08, 0.707107, 0.707107, 3.09086e-08, -0.707107, 0.707107, 1, 4.37114e-08, 0, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.09086e-08, -0.707107, 0.707107, 3.09086e-08, -0.707107, -0.707107, 1, 4.37114e-08, -2.51215e-15, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, -0.707107, 0.5, -0.707107, -3.09086e-08, 0.707107, -0.5, -0.707107, -0.5, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, -0.707107, -0.5, -0.707107, -4.58098e-08, 0.707107, -0.5, 0.707107, -0.5, 0, 0.6, 0)
+material_overlay = SubResource("StandardMaterial3D_kdton")
+mesh = SubResource("TorusMesh_4cah7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("SphereShape3D_yl7cq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

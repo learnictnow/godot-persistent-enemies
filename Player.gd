@@ -31,3 +31,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func damage():
+	GameManager.player_health -= 20
+	GameManager.update_ui.emit()
