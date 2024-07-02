@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsjfiu7aa6wa"]
+
+[ext_resource type="Script" path="res://ChangeZone.gd" id="1_klxld"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_208x6"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syrbk"]
+albedo_color = Color(0.392157, 1, 0.356863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vjjmb"]
+size = Vector3(3, 3, 3)
+
+[node name="ChangeZone" type="Area3D"]
+script = ExtResource("1_klxld")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_208x6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_overlay = SubResource("StandardMaterial3D_syrbk")
+transparency = 0.5
+mesh = SubResource("BoxMesh_vjjmb")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.45128)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

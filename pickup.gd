@@ -2,6 +2,8 @@ extends Area3D
 
 @export var points = 5
 
+@export var pickup_id = -1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
