@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqsgmk5o2m1jm"]
 
-[ext_resource type="PackedScene" uid="uid://7cp05d6g7lje" path="res://level.tscn" id="3_8rhfq"]
+[ext_resource type="PackedScene" uid="uid://7cp05d6g7lje" path="res://levels/level.tscn" id="3_8rhfq"]
 
 [node name="Game" type="Node"]
 

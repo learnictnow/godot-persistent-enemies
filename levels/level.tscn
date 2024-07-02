@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://7cp05d6g7lje"]
 
 [ext_resource type="PackedScene" uid="uid://cowclidwmrbyu" path="res://player.tscn" id="1_77t6u"]
-[ext_resource type="Script" path="res://level.gd" id="1_xwnr8"]
-[ext_resource type="PackedScene" uid="uid://b6gvoh3fltusj" path="res://enemy_square.tscn" id="2_qmt2j"]
-[ext_resource type="PackedScene" uid="uid://cm0fkjg054koa" path="res://enemy_sphere.tscn" id="3_jmeq1"]
+[ext_resource type="Script" path="res://levels/level.gd" id="1_xwnr8"]
+[ext_resource type="PackedScene" uid="uid://b6gvoh3fltusj" path="res://enemies/enemy_square.tscn" id="2_qmt2j"]
+[ext_resource type="PackedScene" uid="uid://cm0fkjg054koa" path="res://enemies/enemy_sphere.tscn" id="3_jmeq1"]
 [ext_resource type="PackedScene" uid="uid://dsjfiu7aa6wa" path="res://change_zone.tscn" id="4_01ae3"]
 [ext_resource type="PackedScene" uid="uid://d15m1cmgrjivm" path="res://pickup.tscn" id="7_rpi3p"]
 
@@ -17,18 +17,18 @@ size = Vector3(25, 1, 25)
 
 [node name="EnemySquare" parent="." instance=ExtResource("2_qmt2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -6)
-change_to = "res://old/battle.tscn"
+change_to = "res://battle/battle.tscn"
 
 [node name="EnemySphere" parent="." instance=ExtResource("3_jmeq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01506, 0.5, -3.23384)
-change_to = "res://old/battle.tscn"
+change_to = "res://battle/battle.tscn"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.69945, 0)
 
 [node name="ChangeZone" parent="." instance=ExtResource("4_01ae3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13744, 1.3799, 0)
-change_to = "res://level2.tscn"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72267, 1.3799, 0)
+change_to = "res://levels/level2.tscn"
 
 [node name="Pickup" parent="." instance=ExtResource("7_rpi3p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73111, 0.5, 2.65054)

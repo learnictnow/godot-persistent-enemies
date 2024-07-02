@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cb3fqvfhd0pl3"]
 
-[ext_resource type="Script" path="res://old/Battle.gd" id="1_w47mo"]
+[ext_resource type="Script" path="res://battle/Battle.gd" id="1_w47mo"]
 
 [sub_resource type="TextMesh" id="TextMesh_m3w77"]
 text = "Battle"
 
 [node name="Battle" type="Node3D"]
+process_mode = 2
 script = ExtResource("1_w47mo")
 
 [node name="MarkerPlayer" type="Marker3D" parent="."]
@@ -56,4 +57,5 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Escape"
 
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/ButtonEscape" to="." method="_on_button_escape_pressed"]
