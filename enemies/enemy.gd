@@ -68,3 +68,12 @@ func _on_battle_leave_battle():
 	$Battle/Control.visible = false
 	$Battle.visible = false
 	pass # Replace with function body.
+
+
+func _on_battle_won_battle():
+	GameManager.kills += 1
+	get_tree().paused = false
+	GameManager.update_ui.emit()
+	queue_free()
+	
+	pass # Replace with function body.

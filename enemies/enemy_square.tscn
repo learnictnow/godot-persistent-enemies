@@ -37,4 +37,5 @@ shape = SubResource("CylinderShape3D_g1t1v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.45128)
 
 [connection signal="leave_battle" from="Battle" to="." method="_on_battle_leave_battle"]
+[connection signal="won_battle" from="Battle" to="." method="_on_battle_won_battle"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

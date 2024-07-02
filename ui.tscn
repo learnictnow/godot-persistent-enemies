@@ -33,3 +33,7 @@ text = "Pickups:"
 [node name="LabelHealth" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Health: "
+
+[node name="LabelKills" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Kills: "

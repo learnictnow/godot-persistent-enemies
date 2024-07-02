@@ -8,6 +8,8 @@ var player_health = 100
 var battle_enemy:Node
 var battle_player:Node
 
+var kills = 0
+
 var current_location = "UNCKOWN"
 
 signal update_ui
@@ -28,6 +30,7 @@ func _on_update_ui():
 	$UI/VBoxContainer/LabelHealth.text = "Health:" + str(player_health)
 	$UI/VBoxContainer/LabelScore.text = "Score: " + str(pickup_score)
 	$UI/VBoxContainer/LabelPickups.text = "Pickups: " + str(pickup_count)
+	$UI/VBoxContainer/LabelKills.text = "Kills: " + str(kills)
 	$UI/LabelLocation.text = current_location
 	pass # Replace with function body.
 
